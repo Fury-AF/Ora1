@@ -1,0 +1,89 @@
+h1 {
+  font-size: 20pt;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+article li {
+  list-style-type: square;
+}
+img {
+  width: 100%;
+  border: 1px solid gray;
+  padding: 3px;
+}
+/*oldal szerekezet kialakítása*/
+
+header,
+nav,
+aside,
+article,
+footer {
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+* {
+  box-sizing: border-box; /* az elem szélességébe beleszámit a border és padding hossz */
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1 fr 4fr; /* ha ezt használom akkor második tábla */
+  /* grid-template-areas: #ha ezt használom nem kell a felső sor
+    "h h h h"
+    "n n n n"
+    "as a a a "
+    "f f f f"; */
+  grid-template-areas:
+    "h h "
+    "n n "
+    "as a  "
+    "f f ";
+  grid-gap: 10px;
+  width: 80%;
+  margin: auto; /* középre igazitás egy tag középre igazítás */
+  /* text-align: center; szöveg középre igazítás  */
+}
+header {
+  grid-area: h;
+}
+nav {
+  grid-area: n;
+}
+aside {
+  grid-area: as;
+}
+article {
+  grid-area: a;
+}
+footer {
+  grid-area: f;
+}
+
+/* Menü kialakítása */
+
+nav li {
+  list-style: none;
+}
+nav ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
+}
+nav a {
+  text-decoration: none;
+  background-color: black;
+  display: block; /* aktív lesz a háttere is */
+  text-align: center;
+  border-radius: 10px;
+}
+nav a:hover {
+  background-color: green;
+  color: black;
+}
